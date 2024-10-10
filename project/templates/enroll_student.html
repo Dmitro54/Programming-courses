@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Записати студента{% endblock %}
+
+{% block content %}
+<h1>Записати студента</h1>
+<form method="POST">
+    <div class="form-group">
+        <label for="student_name">Ім'я студента</label>
+        <input type="text" class="form-control" id="student_name" name="student_name" required>
+    </div>
+    <div class="form-group">
+        <label for="course_name">Назва курсу</label>
+        <input type="text" class="form-control" id="course_name" name="course_name" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Записати студента</button>
+</form>
+{% endblock %}

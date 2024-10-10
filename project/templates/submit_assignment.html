@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Здати завдання{% endblock %}
+
+{% block content %}
+<h1>Здати завдання</h1>
+<form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="assignment_name">Назва завдання</label>
+        <input type="text" class="form-control" id="assignment_name" name="assignment_name" required>
+    </div>
+    <div class="form-group">
+        <label for="student_name">Ім'я студента</label>
+        <input type="text" class="form-control" id="student_name" name="student_name" required>
+    </div>
+    <div class="form-group">
+        <label for="file">Файл</label>
+        <input type="file" class="form-control-file" id="file" name="file" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Здати завдання</button>
+</form>
+{% endblock %}

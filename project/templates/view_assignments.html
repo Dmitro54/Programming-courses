@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Переглянути завдання{% endblock %}
+
+{% block content %}
+<h1>Завдання</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Назва</th>
+            <th>Курс</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for assignment in assignments %}
+        <tr>
+            <td>{{ assignment[0] }}</td>
+            <td>{{ assignment[1] }}</td>
+            <td>{{ assignment[2] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

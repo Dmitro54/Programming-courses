@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Додати курс{% endblock %}
+
+{% block content %}
+<h1>Додати курс</h1>
+<form method="POST">
+    <div class="form-group">
+        <label for="name">Назва курсу</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Опис</label>
+        <textarea class="form-control" id="description" name="description" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="teacher">Викладач</label>
+        <input type="text" class="form-control" id="teacher" name="teacher" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Додати курс</button>
+</form>
+{% endblock %}

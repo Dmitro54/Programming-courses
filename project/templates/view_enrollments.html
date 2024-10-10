@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Переглянути записаних студентів{% endblock %}
+
+{% block content %}
+<h1>Записані студенти</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ім'я студента</th>
+            <th>Назва курсу</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for enrollment in enrollments %}
+        <tr>
+            <td>{{ enrollment[0] }}</td>
+            <td>{{ enrollment[1] }}</td>
+            <td>{{ enrollment[2] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

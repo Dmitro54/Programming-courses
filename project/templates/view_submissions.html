@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Здані завдання{% endblock %}
+
+{% block content %}
+<h1>Здані завдання</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Назва завдання</th>
+            <th>Ім'я студента</th>
+            <th>Оцінка</th>
+            <th>Файл</th>
+            <th>Дії</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for submission in submissions %}
+        <tr>
+            <td>{{ submission[0] }}</td>
+            <td>{{ submission[1] }}</td>
+            <td>{{ submission[2] }}</td>
+            <td>{{ submission[3] if submission[3] is not none else 'Не оцінено' }}</td>
+            <td><a href="{{ url_for('static', filename='uploads/' ~ submission[4]) }}" target="_blank">{{ submission[4] }}</a></td>
+            <td>
+                <form method="POST" action="{{ url_for('view_submissions') }}">
+                    <input type="hidden" name="submission_id" value="{{ submission[0] }}">
+                    <div class="form-group">
+                        <input type="number" name="grade" placeholder="Оцінка" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Оцінити</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
